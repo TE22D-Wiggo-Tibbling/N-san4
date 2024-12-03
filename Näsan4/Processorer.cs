@@ -4,17 +4,27 @@ public class Processorer : Hardware
     private int Kärnor;
 
     private int KlockHastighet;
-    public Processorer(string name, int price, int kärnor, int klockHastighet) : base(name, price)
+    private string Mrke = "Ryzen";
+
+    public Processorer(string name, int price, int kärnor, int klockHastighet, string mrke) : base(name, price)
     {
         Kärnor = kärnor;
         KlockHastighet = klockHastighet;
+        Mrke =mrke;
     }
 
-    public int GetKärnor(){
+    public int GetKärnor()
+    {
         return Kärnor;
     }
 
-    public int GetKlockHAstighet(){
+    public int GetKlockHAstighet()
+    {
         return KlockHastighet;
     }
+    public string GetMrke()
+    {
+        return Mrke;
+    }
+
 }

@@ -42,14 +42,70 @@
 
 // Steg 8
 
-List<Hardware> hardwares = new();
-string awnser;
-while(awnser.ToLower() != "exit"){
-Console.WriteLine("What do you want to add?");
-Console.WriteLine("1. Processor 2. Grafikkort 3. Hårddisk");
-Console.WriteLine("Write exit to exit");
-while (!int.TryParse(Console.ReadLine(), out weight)) Console.WriteLine("NO NUMBAR");
+int Awnser;
+List<Hardware> hardwareses = new();
+while (true)
 {
-    
-}
+    int price = 0;
+    string name = "";
+
+
+    Console.WriteLine("what you wana make?");
+    Console.WriteLine("1. Hårddisk  2. Grafikkort  3. Processor");
+    while (!int.TryParse(Console.ReadLine(), out Awnser) && Awnser < 4 && Awnser > 0)
+    if (Awnser == 1)
+    {
+        int size = 0;
+        int size2 = 0;
+
+        Console.WriteLine("Skriv namn");
+        name = Console.ReadLine();
+        Console.WriteLine("Skriv pris");
+        while (!int.TryParse(Console.ReadLine(), out price)) Console.WriteLine("Du fel");
+        Console.WriteLine("Skriv Storlek");
+        while (!int.TryParse(Console.ReadLine(), out size)) Console.WriteLine("Du fel");
+        Console.WriteLine("Skriv storlek igen");
+        while (!int.TryParse(Console.ReadLine(), out size2)) Console.WriteLine("Du fel");
+        hardwareses.Add(new Hårddisk(name, price, size, size2));
+    }
+    if (Awnser == 2)
+    {
+        int Vram = 0;
+        int Clockspeed = 0;
+        int PowerDraw = 0;
+
+        Console.WriteLine("Skriv namn");
+        name = Console.ReadLine();
+        Console.WriteLine("Skriv pris");
+        while (!int.TryParse(Console.ReadLine(), out price)) Console.WriteLine("Du fel");
+        Console.WriteLine("Skriv Vram");
+        while (!int.TryParse(Console.ReadLine(), out Vram)) Console.WriteLine("Du fel");
+        Console.WriteLine("Skriv Clockhastighet");
+        while (!int.TryParse(Console.ReadLine(), out Clockspeed)) Console.WriteLine("Du fel");
+        Console.WriteLine("Skriv PowerDraw");
+        while (!int.TryParse(Console.ReadLine(), out PowerDraw)) Console.WriteLine("Du fel");
+
+        hardwareses.Add(new Grafikkort(name, price, Vram, Clockspeed, PowerDraw));
+    }
+    if (Awnser == 3)
+    {
+        int Kärnor = 0;
+
+        int KlockHastighet = 0;
+        string Mrke = "ads";
+
+        Console.WriteLine("Skriv namn");
+        name = Console.ReadLine();
+        Console.WriteLine("Skriv pris");
+        while (!int.TryParse(Console.ReadLine(), out price)) Console.WriteLine("Du fel");
+        Console.WriteLine("Skriv Vram");
+        while (!int.TryParse(Console.ReadLine(), out Kärnor)) Console.WriteLine("Du fel");
+        Console.WriteLine("Skriv Clockhastighet");
+        while (!int.TryParse(Console.ReadLine(), out KlockHastighet)) Console.WriteLine("Du fel");
+        Console.WriteLine("Skriv PowerDraw");
+        Mrke = Console.ReadLine();
+
+
+        hardwareses.Add(new Processorer(name, price, Kärnor, KlockHastighet, Mrke));
+    }
 }
