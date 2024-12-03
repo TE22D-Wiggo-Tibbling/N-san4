@@ -52,7 +52,7 @@ while (true)
 
     Console.WriteLine("what you wana make?");
     Console.WriteLine("1. Hårddisk  2. Grafikkort  3. Processor");
-    while (!int.TryParse(Console.ReadLine(), out Awnser) && Awnser < 4 && Awnser > 0)
+    while (!int.TryParse(Console.ReadLine(), out Awnser) || Awnser > 4 || Awnser < 0) Console.WriteLine("du fel");
     if (Awnser == 1)
     {
         int size = 0;
